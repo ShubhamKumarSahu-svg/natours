@@ -8,7 +8,8 @@
     "start:prod": "cross-env NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "esbuild public/js/index.js --bundle --outfile=public/js/bundle.js --loader:.css=text --watch --minify",
-    "build:js": "esbuild public/js/index.js --outfile=public/js/bundle.js --bundle --minify"
+    "dev:js": "esbuild public/js/index.js --bundle --outfile=public/js/bundle.js --loader:.css=text --watch",
+    "build:js": "node build.js"
   },
   "author": "Jonas Schmedtmann",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "@babel/polyfill": "7.12.1",
     "axios": "1.10.0",
     "bcryptjs": "^2.4.3",
+    "compression": "1.8.0",
     "cookie-parser": "1.4.7",
     "core-js": "3.43.0",
     "dotenv": "^7.0.0",
@@ -41,6 +43,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "brotli": "1.3.3",
     "cross-env": "7.0.3",
     "esbuild": "0.25.5",
     "eslint": "^5.16.0",
@@ -51,7 +54,8 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "zlib": "1.0.5"
   },
   "engines": {
     "node": ">=10.0.0"

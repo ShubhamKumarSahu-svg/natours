@@ -11,10 +11,10 @@ export const bookTour = catchAsync(async tourId => {
   try {
     // 1) Get checkout session from the API
     const session = await axios.get(
-      `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`
+      `api/v1/bookings/checkout-session/${tourId}`
     );
 
-    console.log('✅ Session fetched:', session.data);
+    // console.log('✅ Session fetched:', session.data);
 
     // 2) Redirect to Stripe Checkout
     await stripe.redirectToCheckout({
