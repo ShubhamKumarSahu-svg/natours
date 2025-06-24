@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 
 const path = require('path');
 const compression = require('compression');
+const cors = require('cors');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
@@ -26,9 +27,13 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 // 1) GLOBAL MIDDLEWARES
 
+//implement cors
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, 'public')));
 // Set security HTTP headers
 app.use(helmet());
+app.options('*', cors()); // for non simple requests as well
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
