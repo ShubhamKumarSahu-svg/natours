@@ -8,11 +8,10 @@ const stripe = Stripe(
 ); // must be replaced manually or injected at build time
 
 export const bookTour = catchAsync(async tourId => {
+  console.log(
+    `${window.location.origin}/api/v1/bookings/checkout-session/${tourId}`
+  );
   try {
-    console.log(
-      `${window.location.origin}/api/v1/bookings/checkout-session/${tourId}`
-    );
-
     // 1) Get checkout session from the API
     const session = await axios.get(
       `https://natours-byshubham-7b1f48a23dda.herokuapp.com/api/v1/bookings/checkout-session/${tourId}`
