@@ -11,7 +11,7 @@ export const bookTour = catchAsync(async tourId => {
   try {
     // 1) Get checkout session from the API
     const session = await axios.get(
-      `/api/v1/bookings/checkout-session/${tourId}`
+      `${window.location.origin}/api/v1/bookings/checkout-session/${tourId}`
     );
 
     // console.log('✅ Session fetched:', session.data);
