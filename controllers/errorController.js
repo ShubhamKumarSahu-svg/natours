@@ -52,7 +52,7 @@ const sendErrorProd = (err, req, res) => {
         message: err.message
       });
     }
-    // console.log(err);
+    console.log(err);
     // Programming or unknown error
     return res.status(500).json({
       status: 'error',
