@@ -2,6 +2,7 @@
 import '@babel/polyfill';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import { showAlert } from './alerts';
 import { login, logout } from './login';
 import { displayMap } from './mapbox';
 import { signup } from './signupRender';
@@ -91,4 +92,9 @@ if (bookBtn) {
     const tourId = e.target.dataset.tourId;
     bookTour(tourId);
   });
+}
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alert) {
+  showAlert('success', alertMessage, 3);
 }
