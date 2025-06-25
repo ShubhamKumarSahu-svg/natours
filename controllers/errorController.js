@@ -46,13 +46,13 @@ const sendErrorDev = (err, req, res) => {
 const sendErrorProd = (err, req, res) => {
   // API
   if (req.originalUrl.startsWith('/api')) {
+    console.log(err);
     if (err.isOperational) {
       return res.status(err.statusCode).json({
         status: err.status,
         message: err.message
       });
     }
-    console.log(err);
     // Programming or unknown error
     return res.status(500).json({
       status: 'error',
