@@ -9,9 +9,13 @@ const stripe = Stripe(
 
 export const bookTour = catchAsync(async tourId => {
   try {
+    console.log(
+      `${window.location.origin}/api/v1/bookings/checkout-session/${tourId}`
+    );
+
     // 1) Get checkout session from the API
     const session = await axios.get(
-      `${window.location.origin}/api/v1/bookings/checkout-session/${tourId}`
+      `https://natours-byshubham-7b1f48a23dda.herokuapp.com/api/v1/bookings/checkout-session/${tourId}`
     );
     // console.log('✅ Session fetched:', session.data);
 
