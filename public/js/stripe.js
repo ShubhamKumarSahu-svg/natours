@@ -5,7 +5,7 @@ import { showAlert } from './alerts';
 // const stripe = Stripe(process.env.STRIPE_PUBLISHABLE_KEY); // must be replaced manually or injected at build time
 const stripe = Stripe(
   'pk_test_51RdD7H2cR8crihaiDXttaXneVlr8Cpn6BR01toggMcqMS28ckTuZ4gQwA7RYPEbuGSaNGJibWgO7o8ECn4WkxgVl00l2UbeppA'
-); // must be replaced manually or injected at build time
+); // must be replaced manually ork 0injected at build time
 
 export const bookTour = catchAsync(async tourId => {
   const baseURL = window.location.origin;
